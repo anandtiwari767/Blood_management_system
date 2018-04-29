@@ -10,7 +10,7 @@ $q1="select * from admininfo ";
 
 $table_info=mysqli_query($link,$q1);
 $length=mysqli_num_rows($table_info);
-echo $length;
+
 
 for($i=1;$i<=$length;$i++)
 {
@@ -26,6 +26,6 @@ for($i=1;$i<=$length;$i++)
 if($c==2)
 header("location:adminpage.php");
 else 
-echo ("Incorrect Username and Password");
+echo "<script>alert('Your username and password is incorrect Login only if you are admin '); window.location.href='index.php';</script>";
 
 ?>

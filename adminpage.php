@@ -46,7 +46,7 @@
   </div>
   <div class="card">
     <img class="card-img-top" src="bloodmanage.png" alt="Card image cap">
-   <a href="#"> <div class="card-block">
+   <a href="alldonars.php"> <div class="card-block">
       <h4 class="card-title">Details of the donar</h4>
       <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>

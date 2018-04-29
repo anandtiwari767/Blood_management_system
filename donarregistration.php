@@ -52,64 +52,69 @@
 <div class="form-group row">
   <label for="example-text-input" class="col-2 col-form-label">First Name*</label>
   <div class="col-10">
-    <input class="form-control" type="text" placeholder="First name" id="example-text-input" required>
+    <input class="form-control" type="text" placeholder="First name" name="fn" id="example-text-input" required>
   </div>
 </div>
 <div class="form-group row">
   <label for="example-search-input" class="col-2 col-form-label">Last Name*</label>
   <div class="col-10">
-    <input class="form-control" type="text" placeholder="Last Name" id="example-search-input" required>
+    <input class="form-control" type="text" placeholder="Last Name" name="ln" id="example-search-input" required>
   </div>
 </div>
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">AGE*</label>
+  <div class="col-10">
+    <input class="form-control" type="text" placeholder="20" id="example-text-input" required name="age" min="18" max="50">
+  </div></div>
+  <div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Weight*</label>
+  <div class="col-10">
+    <input class="form-control" type="text" placeholder="65" id="example-text-input" min="60" required name="weight">
+  </div></div>
 <div class="form-group row">
   <label for="example-email-input" class="col-2 col-form-label">Email*</label>
   <div class="col-10">
-    <input class="form-control" type="email" placeholder="admin@gmail.com" id="example-email-input" required>
+    <input class="form-control" type="email" placeholder="admin@gmail.com" name="email" id="example-email-input" required>
   </div>
 </div>
-<div class="form-group row">
-  <label for="example-url-input" class="col-2 col-form-label">Website URL</label>
-  <div class="col-10">
-    <input class="form-control" type="url" placeholder="http://www.technoache.me" id="example-url-input">
-  </div>
-</div>
+
 <div class="form-group row">
   <label for="example-tel-input" class="col-2 col-form-label">Contact No.*</label>
   <div class="col-10">
-    <input class="form-control" type="number" placeholder="08213569789" id="example-tel-input">
+    <input class="form-control" type="number" placeholder="08213569789" name="phoneno" id="example-tel-input">
   </div>
 </div>
 
 <div class="form-group row">
   <label for="example-number-input" class="col-2 col-form-label">Number</label>
   <div class="col-10">
-    <input class="form-control" type="number" placeholder="42" id="example-number-input">
+    <input class="form-control" type="number" name="refno" placeholder="42" id="example-number-input">
   </div>
 </div>
 <div class="form-group row">
   <label for="example-date-input" class="col-2 col-form-label">Date of Donation</label>
   <div class="col-10">
-    <input class="form-control" type="date" placeholder="2011-08-19" id="example-date-input">
+    <input class="form-control" type="date" name="date" placeholder="2011-08-19" id="example-date-input">
   </div>
 </div>
 <div class="form-group row">
   <label for="example-time-input" class="col-2 col-form-label">Time of Donation</label>
   <div class="col-10">
-    <input class="form-control" type="time" placeholder="13:45:00" id="example-time-input">
+    <input class="form-control" type="time" name="time" placeholder="13:45:00" id="example-time-input">
   </div>
 </div>
 <hr class="my-5">
 <h3 style="text-align:center"> Address</h3>
 <div class="form-group">
     
-    <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="enter your address"></textarea>
+    <textarea class="form-control" id="exampleTextarea" rows="3" name="address" placeholder="enter your address"></textarea>
   </div>
   
   <h3 style="text-align:center"> Blood info</h3>
   <div class="form-group row">
   <label for="example-tel-input" class="col-2 col-form-label" >Blood Type*</label>
   <div class="col-10">
-    <select class="form-control" id="exampleSelect1" required placeholder="A">
+    <select class="form-control" id="exampleSelect1" required placeholder="A" name="bloodtype">
       <option>A+</option>
       <option>A-</option>
       <option>B+</option>
@@ -124,12 +129,12 @@
   <div class="form-group row">
   <label for="example-tel-input" class="col-2 col-form-label" >Hemoglobin*</label>
   <div class="col-10">
-    <input class="form-control" type="text" placeholder="16.5" id="example-tel-input" required min="12" max="22">
+    <input class="form-control" type="text" placeholder="16.5" name="hemoglobin" id="example-tel-input" required min="12" max="22">
   </div>
 </div>
   <div class="form-group">
   <label for="example-time-input" class="col-2 col-form-label">Storage Area</label>
-    <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Storage Area"></textarea>
+    <textarea class="form-control" id="exampleTextarea" rows="3" name="storagearea" placeholder="Storage Area"></textarea>
   </div>
   <label class="custom-control custom-checkbox">
   <input type="checkbox" class="custom-control-input" required>

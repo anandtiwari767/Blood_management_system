@@ -4,12 +4,12 @@
 <style>
 
 .jumbotron{
- height:600px;
+ height:400px;
   background-image: url("jumbo.png");
   background-repeat: no-repeat;
   background-size: cover;
 padding-left:100px;
-padding-top: 450px;}
+padding-top: 350px;}
 
 </style>
 
@@ -32,6 +32,7 @@ padding-top: 450px;}
       </li>
       
     </ul>
+    <span class="badge badge-danger" style="padding:20px">FOR ADMIN</span>&nbsp&nbsp
     <form class="form-inline my-2 my-lg-0" method="post" action="connection.php">
       <input class="form-control mr-sm-2" type="text" placeholder="Username" required name="username">
       <input class="form-control mr-sm-2" type="password" placeholder="Password" required name="password">
@@ -47,9 +48,9 @@ padding-top: 450px;}
  
   <p style="text-align: center"><strong>Search for the blood group for availability</strong></p>
   <p class="lead">
-  <form class="form-inline my-2 my-lg-0 justify-content-center">
-      <input class="form-control mr-md-4" type="text" placeholder="Search for blood Group" style="width: 500px" >
-      <button type="button" class="btn btn-success">Success</button>
+  <form class="form-inline my-2 my-lg-0 justify-content-center" method="get" action="search.php">
+      <input class="form-control mr-md-4" type="text" placeholder="Search for blood Group" style="width: 500px" required name="search" >
+      <button type="submit" class="btn btn-success">Success</button>
     </form>
   </p>
 </div>
