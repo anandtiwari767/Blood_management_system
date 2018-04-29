@@ -1,4 +1,5 @@
 <?php
+session_start();
 $c=0;
 $link=mysqli_connect("localhost","root","","admins");
 $username= $_POST['username'];
@@ -18,6 +19,7 @@ for($i=1;$i<=$length;$i++)
     //print_r ($result);
     if($result[1]==$username&&$result[2]==$password)
     {
+        $_SESSION['username']=$result[1];
         $c=2;
         break;
     }

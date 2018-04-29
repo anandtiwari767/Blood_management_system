@@ -1,3 +1,8 @@
+<?php
+session_start();
+if(!isset($_SESSION['username']))
+header("location: index.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,17 +24,22 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="adminpage.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About us</a>
       </li>
       
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search for the blood">
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+    <form class="form-inline my-2 my-lg-0" action="search.php" method="get">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search for the blood" name="search">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" >Search</button>
     </form>
+    <div style="padding:5px">
+    <h5><?php echo $_SESSION['username'];?></h5></div>
+    &nbsp&nbsp
+    <a href="logout.php"><button type="button" class="btn btn-primary">Log out</button></a>
+  </div>
   </div>
 </nav>
 </div> 

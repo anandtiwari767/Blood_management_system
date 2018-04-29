@@ -1,22 +1,18 @@
 <?php
-session_start();
-if(!isset($_SESSION['username']))
-header("location: index.php");
-?>
-<?php
+$search=$_GET['search'];
 $con=mysqli_connect("localhost","root","","admins");
-$q1="select * from donarsinfo";
+$q1="select * from donarsinfo where bloodtype='$search'";
 $data=mysqli_query($con,$q1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container">
@@ -37,20 +33,17 @@ $data=mysqli_query($con,$q1);
       
     </ul>
     <form class="form-inline my-2 my-lg-0" action="search.php" method="get">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search for the blood" name="search">
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" >Search</button>
+      <input class="form-control mr-sm-2" type="text" placeholder="Search for the blood">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" name="search">Search</button>
     </form>
-    <div style="padding:5px">
-    <h5><?php echo $_SESSION['username'];?></h5></div>
-    &nbsp&nbsp
-    <a href="logout.php"><button type="button" class="btn btn-primary">Log out</button></a>
-  </div>
   </div>
 </nav>
-</div>
+</div>    
 
 
-  
+
+
+
 <div class="container" style="margin-top:100px;">
 
 <table class="table table-inverse">
@@ -73,17 +66,17 @@ $data=mysqli_query($con,$q1);
 <?php 
 $length=mysqli_num_rows($data);
 if($length>0){
-for($i=0;$i<=$length;$i++){
-$result=mysqli_fetch_array($data); $i=1;
+for($i=1;$i<=$length;$i++){
+$result=mysqli_fetch_array($data); 
  echo '<tr>
-   <th scope="row"> '.$i.'</th>
+   <th scope="row">'.$i.'</th>
    <td>'.$result[1].'</td>
    <td>'.$result[2].'</td>
    <td>'.$result[12].'</td>
    <td>'.$result[13].'</td>
    <td>'.$result[3].'</td>
    <td>'.$result[4].'</td>
-   <td>'.$result[4].'</td>
+   <td>'.$result[8].'</td>
    <td>'.$result[9].'</td>
    <td>'.$result[11].'</td>
  </tr>';}}

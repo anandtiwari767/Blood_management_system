@@ -1,5 +1,13 @@
+
 <?php
+session_start();
+if(!isset($_SESSION['username']))
+header("location: index.php");
+?>
+<?php
+
 $search=$_GET['search'];
+
 $con=mysqli_connect("localhost","root","","admins");
 $q1="select * from donarsinfo where bloodtype='$search'";
 $data=mysqli_query($con,$q1);
@@ -25,16 +33,16 @@ $data=mysqli_query($con,$q1);
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="adminpage.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About us</a>
       </li>
       
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search for the blood">
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+    <form class="form-inline my-2 my-lg-0" method="get" action="search.php" >
+      <input class="form-control mr-sm-2" type="text" placeholder="Search for the blood" name="search">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" >Search</button>
     </form>
   </div>
 </nav>
@@ -66,17 +74,17 @@ $data=mysqli_query($con,$q1);
 <?php 
 $length=mysqli_num_rows($data);
 if($length>0){
-for($i=0;$i<=$length;$i++){
-$result=mysqli_fetch_array($data); $i=1;
+for($i=1;$i<=$length;$i++){
+$result=mysqli_fetch_array($data); 
  echo '<tr>
-   <th scope="row"><?php echo $i?></th>
+   <th scope="row">'.$i.'</th>
    <td>'.$result[1].'</td>
    <td>'.$result[2].'</td>
    <td>'.$result[12].'</td>
    <td>'.$result[13].'</td>
    <td>'.$result[3].'</td>
    <td>'.$result[4].'</td>
-   <td>'.$result[4].'</td>
+   <td>'.$result[8].'</td>
    <td>'.$result[9].'</td>
    <td>'.$result[11].'</td>
  </tr>';}}

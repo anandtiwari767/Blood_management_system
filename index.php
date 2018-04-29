@@ -48,7 +48,7 @@ padding-top: 350px;}
  
   <p style="text-align: center"><strong>Search for the blood group for availability</strong></p>
   <p class="lead">
-  <form class="form-inline my-2 my-lg-0 justify-content-center" method="get" action="search.php">
+  <form class="form-inline my-2 my-lg-0 justify-content-center" method="get" action="searchnl.php">
       <input class="form-control mr-md-4" type="text" placeholder="Search for blood Group" style="width: 500px" required name="search" >
       <button type="submit" class="btn btn-success">Success</button>
     </form>

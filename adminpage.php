@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['username']))
+header("location: index.php");
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,17 +27,22 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="adminpage.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About us</a>
       </li>
       
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search for the blood">
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+   
+    <form class="form-inline my-2 my-lg-0" action="search.php" method="get">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search for the blood" name="search">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" >Search</button>
     </form>
+    <div style="padding:5px">
+    <h5><?php echo $_SESSION['username'];?></h5></div>
+    &nbsp&nbsp
+    <a href="logout.php"><button type="button" class="btn btn-primary">Log out</button></a>
   </div>
 </nav>
 </div>
@@ -40,7 +52,7 @@
     <img class="card-img-top" src="Blood-Donation.jpg" alt="Card image cap">
    <a href="donarregistration.php"> <div class="card-block">
       <h4 class="card-title">Add a new Donar</h4>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text">Click to add a new blood donar</p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div></a>
   </div>
@@ -48,7 +60,7 @@
     <img class="card-img-top" src="bloodmanage.png" alt="Card image cap">
    <a href="alldonars.php"> <div class="card-block">
       <h4 class="card-title">Details of the donar</h4>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text">Click to know about all the detais of the donar</p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div></a>
   </div>
@@ -56,7 +68,7 @@
     <img class="card-img-top" src="images.jpg" alt="Card image cap">
    <a href="#"> <div class="card-block">
       <h4 class="card-title">Donars Request </h4>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text">open all the requests of the donar and respond to them</p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div></a>
   </div>

@@ -1,4 +1,9 @@
 <?php
+session_start();
+if(!isset($_SESSION['username']))
+header("location: index.php");
+?>
+<?php
 $con=mysqli_connect("localhost","root","","admins");
 $fname=$_POST['fn'];
 $lname=$_POST['ln'];
