@@ -72,9 +72,10 @@ $data=mysqli_query($con,$q1);
 <tbody>
 <?php 
 $length=mysqli_num_rows($data);
+
 if($length>0){
-for($i=0;$i<=$length;$i++){
-$result=mysqli_fetch_array($data); $i=1;
+for($i=0;$i<=$length-1;$i++){
+$result=mysqli_fetch_array($data);
  echo '<tr>
    <th scope="row"> '.$i.'</th>
    <td>'.$result[1].'</td>

@@ -85,16 +85,18 @@ $result=mysqli_fetch_array($data);
    
   </tbody>
 </table> 
-<a href="prewdetails.php?click=1"><button type="button" class="btn btn-outline-success mx-auto d-block" style="width: 250px">Want to delete this record</button>
+<a href="delete.php"><button type="button" class="btn btn-outline-success mx-auto d-block" style="width: 250px" >Want to delete this record</button></a>
 </div>
-<?php
-if($_GET['click']==1)
-{
- $q2="delete from donarsinfo where id=$result[0]";
 
- mysqli_query($con,$q2);
-header("location:deletedlastregis.php");  
-}
+<?php
+//if($_GET['click']==1)
+
+//{
+// $q2="delete from donarsinfo where id=$result[0]";
+
+ //mysqli_query($con,$q2);
+//header("location:deletedlastregis.php");  
+//}
 ?>
 </body>
 </html>

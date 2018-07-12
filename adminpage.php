@@ -32,6 +32,9 @@ header("location: index.php");
       <li class="nav-item">
         <a class="nav-link" href="#">About us</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="form.php">Add User</a>
+      </li>
       
     </ul>
    
@@ -64,14 +67,7 @@ header("location: index.php");
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div></a>
   </div>
-  <div class="card">
-    <img class="card-img-top" src="images.jpg" alt="Card image cap">
-   <a href="#"> <div class="card-block">
-      <h4 class="card-title">Donars Request </h4>
-      <p class="card-text">open all the requests of the donar and respond to them</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div></a>
-  </div>
+ 
 </div>
 </div>
 

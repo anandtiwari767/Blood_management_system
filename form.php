@@ -1,18 +1,17 @@
+<!DOCTYPE html>
 <?php
 session_start();
 if(!isset($_SESSION['username']))
 header("location: index.php");
 ?>
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container">
@@ -44,17 +43,23 @@ header("location: index.php");
   </div>
 </nav>
 </div>
-<div class="container" style="margin-top: 100px;">  
-<div class="alert alert-success" role="alert">
-  <strong>Well done!</strong> You successfully registered a donar.
-</div>
-<div class="container" >
-<form class="form-inline my-2 my-lg-0 justify-content-center">
-      
-    
+<div class="container" style="margin-top:100px;">
+<form style="border:2px solid black; padding: 30px;" method="post" action="adduserconfig.php">
 
-<a href="donarregistration.php?click=1"><button type="button" class="btn btn-secondary btn-lg">Add More Doner</button></a>
-&nbsp &nbsp &nbsp<a href="prewdetails.php"><button type="button" class="btn btn-secondary btn-lg">Show Registered Details</button></a>
-</form></div>
+  <div class="form-group" >
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="username" name="username" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="user ID">
+    
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required name="password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Confirm Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password1" required>
+  </div>
+  <button type="submit" class="btn btn-primary">ADD USER</button>
+  </div>
 </body>
 </html>
