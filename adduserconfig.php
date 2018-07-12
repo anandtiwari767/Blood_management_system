@@ -10,7 +10,7 @@ if($password!=$password1)
 }
 else
 {
-  $link=mysqli_connect("localhost","root","","admins");
+  $link=mysqli_connect("34.239.121.22","root","","admins");
     $q="insert into admininfo(username,password) values('$username','$password')";
     mysqli_query($link,$q);
     header("location:useradded.php");

@@ -5,7 +5,7 @@ header("location: index.php");
 ?>
 
 <?php
-$con=mysqli_connect("localhost","root","","admins");
+$con=mysqli_connect("34.239.121.22","root","","admins");
 $q1="SELECT * FROM donarsinfo ORDER BY ID DESC LIMIT 1";
 $data=mysqli_query($con,$q1);
 $result=mysqli_fetch_array($data);

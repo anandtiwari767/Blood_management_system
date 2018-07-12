@@ -1,7 +1,7 @@
 <?php
 session_start();
 $c=0;
-$link=mysqli_connect("localhost","root","","admins");
+$link=mysqli_connect("34.239.121.22","root","","admins");
 $username= $_POST['username'];
 $password=$_POST['password'];
 

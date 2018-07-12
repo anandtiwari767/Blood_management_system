@@ -4,7 +4,7 @@ if(!isset($_SESSION['username']))
 header("location: index.php");
 ?>
 <?php
-$con=mysqli_connect("localhost","root","","admins");
+$con=mysqli_connect("34.239.121.22","root","","admins");
 $q1="select * from donarsinfo";
 $data=mysqli_query($con,$q1);
 ?>

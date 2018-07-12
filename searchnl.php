@@ -1,6 +1,6 @@
 <?php
 $search=$_GET['search'];
-$con=mysqli_connect("localhost","root","","admins");
+$con=mysqli_connect("34.239.121.22","root","","admins");
 $q1="select * from donarsinfo where bloodtype='$search'";
 $data=mysqli_query($con,$q1);
 ?>
